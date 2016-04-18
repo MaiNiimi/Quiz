@@ -119,7 +119,7 @@ public class Anagrams extends JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
 
-        setTitle("Quiz");
+        setTitle("クイズ");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
@@ -130,7 +130,7 @@ public class Anagrams extends JFrame {
         mainPanel.setMinimumSize(new java.awt.Dimension(297, 200));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
-        scrambledLabel.setText("Scrambled Word:");
+        scrambledLabel.setText("まぜまぜ文字:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -150,7 +150,7 @@ public class Anagrams extends JFrame {
 
         guessLabel.setDisplayedMnemonic('Y');
         guessLabel.setLabelFor(guessedWord);
-        guessLabel.setText("Your Guess:");
+        guessLabel.setText("あなたの答え:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -165,7 +165,7 @@ public class Anagrams extends JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
         mainPanel.add(guessedWord, gridBagConstraints);
 
-        feedbackLabel.setText("aaaaaaaaaaaaaa");
+        feedbackLabel.setText("ああああああ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -179,7 +179,7 @@ public class Anagrams extends JFrame {
         buttonsPanel.setLayout(new java.awt.GridBagLayout());
 
         guessButton.setMnemonic('G');
-        guessButton.setText("Guess");
+        guessButton.setText("あなたの答え");
         guessButton.setToolTipText("Guess the scrambled word.");
         guessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,7 +189,7 @@ public class Anagrams extends JFrame {
         buttonsPanel.add(guessButton, new java.awt.GridBagConstraints());
 
         nextTrial.setMnemonic('N');
-        nextTrial.setText("New Word");
+        nextTrial.setText("新しい単語");
         nextTrial.setToolTipText("Fetch a new word.");
         nextTrial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +206,7 @@ public class Anagrams extends JFrame {
         gridBagConstraints.weighty = 1.0;
         mainPanel.add(buttonsPanel, gridBagConstraints);
 
-        levelLabel.setText("Level:");
+        levelLabel.setText("レベル:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -222,10 +222,10 @@ public class Anagrams extends JFrame {
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         fileMenu.setMnemonic('F');
-        fileMenu.setText("File");
+        fileMenu.setText("ファイル");
 
         aboutMenuItem.setMnemonic('A');
-        aboutMenuItem.setText("About");
+        aboutMenuItem.setText("これについて");
         aboutMenuItem.setToolTipText("About");
         aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +235,7 @@ public class Anagrams extends JFrame {
         fileMenu.add(aboutMenuItem);
 
         exitMenuItem.setMnemonic('E');
-        exitMenuItem.setText("Exit");
+        exitMenuItem.setText("とじる");
         exitMenuItem.setToolTipText("Quit Team, Quit!");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,10 +270,10 @@ public class Anagrams extends JFrame {
 
     private void guessedWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guessedWordActionPerformed
         if (wordLibrary.isCorrect(wordIdx, guessedWord.getText())){
-            feedbackLabel.setText("Correct! Try a new word!");
+            feedbackLabel.setText("正解！新しい単語にチャレンジ！");
             getRootPane().setDefaultButton(nextTrial);
         } else {
-            feedbackLabel.setText("Incorrect! Try again!");
+            feedbackLabel.setText("ぶっぶー！もっかいチャレンジ！");
             guessedWord.setText("");
         }
 
