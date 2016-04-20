@@ -82,7 +82,7 @@ final class StaticWordLibrary extends WordLibrary {
         "vertex",
         "unsigned",
         "traditional",
-        "cat"};
+        "apple"};
 
     //課題2-3　セカンド
     /*
@@ -132,7 +132,7 @@ final class StaticWordLibrary extends WordLibrary {
         "evtrxe",
         "nuisngde",
         "rtdatioialn",
-        "act"
+        "aplep"
     };
     */
     final static WordLibrary DEFAULT = new StaticWordLibrary();

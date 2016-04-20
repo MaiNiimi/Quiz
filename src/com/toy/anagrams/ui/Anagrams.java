@@ -77,6 +77,9 @@ public class Anagrams extends JFrame {
     }
 
     private int wordIdx = 0;
+    private String[] combodata = {"Level 1","Level 2", "Level 3"};
+    
+    private int number;
     private WordLibrary wordLibrary;
     //private StaticWordLibrary staticwordlibrary;
 
@@ -86,7 +89,8 @@ public class Anagrams extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(shuffleWord(wordIdx));
+        number = selectLevel.getSelectedIndex();
+        scrambledWord.setText(shuffleWord(wordIdx,number));
         //scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
         pack();
         guessedWord.requestFocusInWindow();
@@ -116,7 +120,7 @@ public class Anagrams extends JFrame {
         guessButton = new javax.swing.JButton();
         nextTrial = new javax.swing.JButton();
         levelLabel = new javax.swing.JLabel();
-        selectLevel = new javax.swing.JComboBox();
+        selectLevel = new javax.swing.JComboBox(combodata);
         mainMenu = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -215,7 +219,9 @@ public class Anagrams extends JFrame {
         gridBagConstraints.gridy = 2;
         mainPanel.add(levelLabel, gridBagConstraints);
 
-        selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
+        
+        selectLevel.setModel(new javax.swing.DefaultComboBoxModel(combodata));
+        //selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -258,11 +264,10 @@ public class Anagrams extends JFrame {
 
     private void nextTrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextTrialActionPerformed
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
+        number = selectLevel.getSelectedIndex();
         //課題2-3 二周目セカンド
         feedbackLabel.setText(" ");
-        //scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
-        //↑的なことをしたい
-        scrambledWord.setText(shuffleWord(wordIdx));
+        scrambledWord.setText(shuffleWord(wordIdx,number));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 
@@ -288,14 +293,19 @@ public class Anagrams extends JFrame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
-    //課題2-3　セカンド
-    public String shuffleWord(int idx){
+    //課題2-3　セカンド・サード
+    public String shuffleWord(int idx,int number){
     	String sword = wordLibrary.getWord(idx);
-    	String shuffleword = sword.substring(1) + sword.charAt(0);	
-    	//Character one = sword.charAt(0);
-    	//Character two = sword.charAt(1);
-    	//String shuffleword = two + one + sword;
-    	return shuffleword;
+    	if (number == 0) {
+    		String shuffleword1 = sword.substring(1) + sword.charAt(0);	
+    		return shuffleword1;	
+    	} else if (number == 1) {	
+    		String shuffleword2 = sword.substring(2) + sword.substring(0,2);
+        	return shuffleword2;
+        } else {
+        	String shuffleword3 = sword.substring(3) + sword.substring(0,3);
+        	return shuffleword3;
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
