@@ -84,6 +84,8 @@ final class StaticWordLibrary extends WordLibrary {
         "traditional",
         "cat"};
 
+    //課題2-3　セカンド
+    /*
     private static final String[] SCRAMBLED_WORD_LIST = {
         "batsartcoin",
         "maibuguos",
@@ -132,7 +134,7 @@ final class StaticWordLibrary extends WordLibrary {
         "rtdatioialn",
         "act"
     };
-    
+    */
     final static WordLibrary DEFAULT = new StaticWordLibrary();
 
     /**
@@ -155,10 +157,13 @@ final class StaticWordLibrary extends WordLibrary {
      * @param idx index of required word
      * @return word at that index in its scrambled form
      */
+    //課題2-3 セカンド
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+        //return SCRAMBLED_WORD_LIST[idx];
+    	return "";
     }
-
+	
+    
     /**
      * Gets the number of words in the library.
      * @return the total number of plain/scrambled word pairs in the library
@@ -166,6 +171,8 @@ final class StaticWordLibrary extends WordLibrary {
     public int getSize() {
         return WORD_LIST.length;
     }
+    
+    
 
     /**
      * Checks whether a user's guess for a word at the given index is correct.
@@ -176,5 +183,4 @@ final class StaticWordLibrary extends WordLibrary {
     public boolean isCorrect(int idx, String userGuess) {
         return userGuess.equals(getWord(idx));
     }
-
 }

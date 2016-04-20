@@ -32,6 +32,7 @@
 package com.toy.anagrams.ui;
 
 import com.toy.anagrams.lib.WordLibrary;
+//import com.toy.anagrams.lib.StaticWordLibrary;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -77,6 +78,7 @@ public class Anagrams extends JFrame {
 
     private int wordIdx = 0;
     private WordLibrary wordLibrary;
+    //private StaticWordLibrary staticwordlibrary;
 
     /** Creates new form Anagrams */
     public Anagrams() {
@@ -84,7 +86,8 @@ public class Anagrams extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(shuffleWord(wordIdx));
+        //scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
@@ -255,9 +258,11 @@ public class Anagrams extends JFrame {
 
     private void nextTrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextTrialActionPerformed
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
-
+        //課題2-3 二周目セカンド
         feedbackLabel.setText(" ");
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        //scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        //↑的なことをしたい
+        scrambledWord.setText(shuffleWord(wordIdx));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 
@@ -283,6 +288,15 @@ public class Anagrams extends JFrame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
+    //課題2-3　セカンド
+    public String shuffleWord(int idx){
+    	String sword = wordLibrary.getWord(idx);
+    	String shuffleword = sword.substring(1) + sword.charAt(0);	
+    	//Character one = sword.charAt(0);
+    	//Character two = sword.charAt(1);
+    	//String shuffleword = two + one + sword;
+    	return shuffleword;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;

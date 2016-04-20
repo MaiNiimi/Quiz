@@ -60,12 +60,14 @@ public abstract class WordLibrary {
      * @param idx index of required word
      * @return word at that index in its scrambled form
      */
+    
     public abstract String getScrambledWord(int idx);
 
     /**
      * Gets the number of words in the library.
      * @return the total number of plain/scrambled word pairs in the library
      */
+    
     public abstract int getSize();
 
     /**
@@ -75,4 +77,15 @@ public abstract class WordLibrary {
      * @return true if the guess was correct; false otherwise
      */
     public abstract boolean isCorrect(int idx, String userGuess);
+    
+    //課題2-3 セカンド
+    //これで一応いけたよ
+    /*
+    public int shuffleWords(int wordIdx){
+    	int idx = wordIdx;
+    	//さちこ変更頼んだ。2→getselectedIdx()
+    	idx = (idx + 2) % getSize();
+    	return idx;
+    }
+    */
 }
