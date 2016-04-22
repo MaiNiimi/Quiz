@@ -32,6 +32,8 @@
 package com.toy.anagrams.ui;
 
 import com.toy.anagrams.lib.WordLibrary;
+
+import java.awt.Color;
 //import com.toy.anagrams.lib.StaticWordLibrary;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -187,6 +189,8 @@ public class Anagrams extends JFrame {
 
         buttonsPanel.setLayout(new java.awt.GridBagLayout());
 
+        //課題3-0 サード
+        guessButton.setForeground(Color.red);
         guessButton.setMnemonic('G');
         guessButton.setText("あなたの答え");
         guessButton.setToolTipText("Guess the scrambled word.");
@@ -197,6 +201,9 @@ public class Anagrams extends JFrame {
         });
         buttonsPanel.add(guessButton, new java.awt.GridBagConstraints());
 
+
+        //課題3-0 サード
+        nextTrial.setForeground(Color.blue);
         nextTrial.setMnemonic('N');
         nextTrial.setText("新しい単語");
         nextTrial.setToolTipText("Fetch a new word.");
