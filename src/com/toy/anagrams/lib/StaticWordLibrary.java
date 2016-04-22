@@ -60,7 +60,7 @@ final class StaticWordLibrary extends WordLibrary {
         "indistinguishable",
         "inheritance",
         "internet",
-        "japan",
+        "japanese",
         "localization",
         "microprocessor",
         "navigation",
@@ -82,7 +82,7 @@ final class StaticWordLibrary extends WordLibrary {
         "vertex",
         "unsigned",
         "traditional",
-        "apple"};
+        "pineapple"};
 
     //課題2-3　セカンド
     /*
@@ -110,7 +110,7 @@ final class StaticWordLibrary extends WordLibrary {
         "niidtsniugsiahleb",
         "niehiratcen",
         "nietnret",
-        "ajanp",
+        "ajanpese",
         "olacilazitno",
         "imrcpoorecssro",
         "anivagitno",
@@ -132,7 +132,7 @@ final class StaticWordLibrary extends WordLibrary {
         "evtrxe",
         "nuisngde",
         "rtdatioialn",
-        "aplep"
+        "apleppine"
     };
     */
     final static WordLibrary DEFAULT = new StaticWordLibrary();

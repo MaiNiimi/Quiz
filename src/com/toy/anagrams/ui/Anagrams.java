@@ -79,7 +79,8 @@ public class Anagrams extends JFrame {
     }
 
     private int wordIdx = 0;
-    private String[] combodata = {"Level 1","Level 2", "Level 3"};
+    //課題3-0 セカンド（順番的にサード）
+    private String[] combodata = {"お子ちゃま","普通の子", "できる子", "天才!"};
     
     private int number;
     private WordLibrary wordLibrary;
@@ -302,6 +303,7 @@ public class Anagrams extends JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitForm
     //課題2-3　セカンド・サード
+    //課題3-0 セカンド（順番的にサード）
     public String shuffleWord(int idx,int number){
     	String sword = wordLibrary.getWord(idx);
     	if (number == 0) {
@@ -310,9 +312,12 @@ public class Anagrams extends JFrame {
     	} else if (number == 1) {	
     		String shuffleword2 = sword.substring(2) + sword.substring(0,2);
         	return shuffleword2;
-        } else {
+        } else if(number == 2){
         	String shuffleword3 = sword.substring(3) + sword.substring(0,3);
         	return shuffleword3;
+        }else {
+        	String shuffleword4 = sword.substring(4) + sword.substring(0,4);
+        	return shuffleword4;
         }
     }
 
