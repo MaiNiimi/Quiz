@@ -118,7 +118,9 @@ public class Anagrams extends JFrame {
         feedbackLabel = new javax.swing.JLabel();
         buttonsPanel = new javax.swing.JPanel();
         guessButton = new javax.swing.JButton();
+        guessButton.setPreferredSize(new Dimension(130,50));
         nextTrial = new javax.swing.JButton();
+        nextTrial.setPreferredSize(new Dimension(130,50));
         levelLabel = new javax.swing.JLabel();
         selectLevel = new javax.swing.JComboBox(combodata);
         mainMenu = new javax.swing.JMenuBar();
@@ -270,7 +272,6 @@ public class Anagrams extends JFrame {
         scrambledWord.setText(shuffleWord(wordIdx,number));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
-
         guessedWord.requestFocusInWindow();
     }//GEN-LAST:event_nextTrialActionPerformed
 
